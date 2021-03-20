@@ -185,6 +185,33 @@ $eqLogics = eqLogic::byType($plugin->getId());
 								 </div>
 							  </div>
 							  <legend><i class="fas fa-envelope"></i> {{Envoi}}</legend>
+							  
+							  <div class="form-group">
+								 <label class="col-sm-3 control-label">{{Fichier de Certificat pour l'équipement}}</label>
+								 <div class="col-sm-7">
+								 	<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="certificate_name">
+									 	<option value="defaultSetting">Celui défini par défaut</option>
+									 <?php
+										$path=realpath(dirname(__FILE__). '/../../').'/3rdparty/Certificate';
+										if (!is_dir($path)){
+											log::add('CovidAttest', 'error', '[CONF] path :'.$path.' Not FOUND ');
+										}
+										$files = glob($path.'/*');
+										foreach($files as $file){ // iterate files
+											if(is_file($file) && preg_match('/\.pdf$/', basename ($file))){
+												
+											$fname = basename ($file);
+											log::add('CovidAttest', 'debug', ' pdf file found '.basename ($file));
+											echo '<option value="'.$fname.'">'.$fname."</option>";
+
+											}
+										}
+										
+									?>
+									 </select>
+								 </div>
+							  </div>
+
 
 							  <div class="form-group">
 								 <label class="col-sm-3 control-label help" >{{Commande d'envoi}}</label>

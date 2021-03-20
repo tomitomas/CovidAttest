@@ -643,11 +643,14 @@ public static function dependancy_install() {
       	$secondpage=$this->getConfiguration('option_addpage', '');
 	  	log::add('CovidAttest', 'debug', '╠════ ajout de la seconde page :'.$secondpage);
 		  
-		  // creation de l'instance
-		  $ag=new ATTESTGEN();
+		// creation de l'instance
+		$ag=new ATTESTGEN();
 
-		  // récupération du fichier défini en configuration
-		$certifFile=config::byKey('certificate_name', 'CovidAttest', 'none');
+		// récupération du fichier défini en configuration
+		$certifFile = $this->getConfiguration('certificate_name', null) ;
+		if ( is_null($certifFile) || $certifFile == 'defaultSetting' ){
+			$certifFile = config::byKey('certificate_name', 'CovidAttest', 'none'); 
+		}
 		
 		if (!is_null($certifFile) && $certifFile!= 'none'){
 			log::add('CovidAttest', 'debug', '╠════ Certificat utilisé :'.$certifFile);

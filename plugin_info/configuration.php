@@ -35,8 +35,8 @@ if (!isConnect()) {
   </fieldset>
     <fieldset>
         <div class="form-group">
-			<label class="col-lg-4 control-label">{{Fichier de Certificat}}</label>
-            <div class="col-lg-2">
+			<label class="col-lg-4 control-label">{{Fichier de Certificat par défaut}}</label>
+            <div class="col-lg-3">
                 <select class="configKey form-control eqLogicAttr" data-l1key="certificate_name">
                 <?php
                     $path=realpath(dirname(__FILE__). '/../').'/3rdparty/Certificate';
@@ -60,8 +60,8 @@ if (!isConnect()) {
             <div class="col-lg-5">
 				<a class="btn btn-info" id="bt_modalUpload_CA"><i class="fas fa-download"></i> {{Upload new File}}</a>
 				<a class="btn btn-warning" id="bt_modal_CA"><i class="fas jeedomapp-preset"></i> {{File Parameters}}</a>
-                <a class="btn btn-info" id="bt_tests_CA"><i class="fas fa-eye"></i> {{Test Params}}</a>
-                <a class="btn btn-info" id="bt_zip_CA"><i class="fas fa-eject"></i> {{share configuration}}</a>
+                <a class="btn btn-default" id="bt_tests_CA"><i class="fas fa-eye"></i> {{Test Params}}</a>
+                <a class="btn btn-default" id="bt_zip_CA"><i class="fas fa-eject"></i> {{share configuration}}</a>
 
 			</div>
 		</div>
