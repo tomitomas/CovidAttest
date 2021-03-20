@@ -178,7 +178,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									<input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="use_user_ctown_sign"/>
 								 </div>
 							  </div>
-							  <div class="form-group user_ctown_sign">
+							  <div class="form-group user_ctown_sign" style="display:none">
 								 <label class="col-sm-3 control-label">{{Ville - signature}}</label>
 								 <div class="col-sm-7">
 									<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="user_ctown_sign" placeholder="Here"/>
